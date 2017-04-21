@@ -1,0 +1,12 @@
+<h3>
+  <% if logged_in? %>
+    <%= link_to "Logout", logout_path, {method: "DELETE"} %>
+    <% else %>
+       <%= link_to "Login", new_session_path %>
+  <% end %>
+</h3>
+<% if flash[:alert] %>
+<div class="alert alert-warning">
+  <%= flash[:alert] %>
+</div>
+<% end %>
